@@ -197,3 +197,81 @@ html { scroll-behavior: smooth; }
 .projects-heading {
   scroll-margin-top: calc(var(--hero-offset) + 12px);
 }
+
+/* SOCIALS PAGE (locked until card swipe) */
+#socialsPage {
+  min-height: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background: #000;
+  color: #F9F3DE;
+  display: block;
+  padding: 0 2rem;
+  transition: opacity .36s ease, max-height .36s ease, padding .28s ease, min-height .36s ease;
+}
+
+#socialsPage.unlocked {
+  min-height: 100vh;
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+#socialsPage .wrap {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp .6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#socialsPage h2 {
+  font-family: 'Impact', 'Inter Tight', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 8rem);
+  color: #E91B00;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+#socialsPage .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#socialsPage .link {
+  background: #E91B00;
+  color: #F9F3DE;
+  padding: 1rem 1.5rem;
+  border-radius: .75rem;
+  text-decoration: none;
+  border: 2px solid rgba(249, 243, 222, .2);
+  font-family: 'Apercu Mono', 'Courier New', monospace;
+  font-weight: 800;
+  font-size: 1.05rem;
+  transition: all .25s ease;
+  box-shadow: 0 4px 12px rgba(233, 27, 0, .25);
+}
+
+#socialsPage .link:hover {
+  background: #F9F3DE;
+  color: #E91B00;
+  border-color: #E91B00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(233, 27, 0, .4);
+}
