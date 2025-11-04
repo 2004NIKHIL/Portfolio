@@ -84,14 +84,14 @@ html, body {
 .artboard-heading-rtl .kern-t{ display:inline-block; margin-left:.05em; }
 
 /* postcards + images (paths relative to assets/style.css) */
-.postcard-large{ width:clamp(640px,85vw,1400px); max-width:1400px; margin:0 2vw; min-height:clamp(520px,58vh,820px); height:auto; background:#000; color:#F9F3DE; border-radius:18px; transform:rotate(-2.5deg); transform-origin:50% 0%; will-change:transform; overflow:hidden; transition:transform 600ms cubic-bezier(.22,1,.36,1), opacity 400ms ease; opacity:.6; }
+.postcard-large{ width:clamp(640px,85vw,1400px); max-width:1400px; margin:0 2vw; min-height:clamp(520px,58vh,820px); height:auto; background:#000; color:#F9F3DE; border-radius:18px; transform:rotate(-2.5deg); transform-origin:50% 0%; will-change:transform; overflow:hidden; transition:transform 600ms cubic-bezier(.22,1,.36,1), opacity 400ms ease; opacity:1; }
 .postcard-large:nth-child(even){ transform:rotate(2deg); }
 .postcard-large__header{ font-family:'Impact','Inter Tight',system-ui,sans-serif; font-weight:900; font-size:clamp(3rem,6vw,5rem); padding:1.25rem 1.5rem; color:#F9F3DE; letter-spacing:-0.03em; }
 .postcard-large__body{ padding:1.5rem; min-height:200px; color:#F9F3DE; }
 .postcard-large:first-of-type{ background-image:url('images/amongus.png'); background-size:cover; background-position:center; background-repeat:no-repeat; position:relative; }
 .postcard-large:first-of-type::before,
 .postcard-large:nth-of-type(2)::before,
-.postcard-large:nth-of-type(3)::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.25); z-index:0; border-radius:18px; }
+.postcard-large:nth-of-type(3)::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.15); z-index:0; border-radius:18px; }
 .postcard-large:nth-of-type(2){ background-image:url('images/amongus_pressskit.webp'); background-size:cover; background-position:center; background-repeat:no-repeat; position:relative; }
 .postcard-large:nth-of-type(3){ background-image:url('images/2024roles_nologo.webp'); background-size:cover; background-position:center; background-repeat:no-repeat; position:relative; }
 .postcard-large:first-of-type .postcard-large__header,
