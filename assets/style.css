@@ -84,10 +84,23 @@ html, body {
 .artboard-heading-rtl .kern-t{ display:inline-block; margin-left:.05em; }
 
 /* postcards + images (paths relative to assets/style.css) */
-.postcard-large{ width:clamp(640px,85vw,1400px); max-width:1400px; margin:0 2vw; min-height:clamp(520px,58vh,820px); height:auto; background:#000; color:#F9F3DE; border-radius:18px; transform:rotate(-2.5deg); transform-origin:50% 0%; will-change:transform; overflow:hidden; transition:transform 600ms cubic-bezier(.22,1,.36,1), opacity 400ms ease; opacity:1; }
-.postcard-large:nth-child(even){ transform:rotate(2deg); }
+.postcard-large{ width:clamp(640px,85vw,1400px); max-width:1400px; margin:0 2vw; min-height:clamp(520px,58vh,820px); height:auto; background:#000; color:#F9F3DE; border-radius:18px; transform:rotate(-2.5deg) scale(0.85); transform-origin:50% 0%; will-change:transform; overflow:hidden; transition:transform 600ms cubic-bezier(.22,1,.36,1), opacity 400ms ease; opacity:0.6; }
+.postcard-large:nth-child(even){ transform:rotate(2deg) scale(0.85); }
 .postcard-large__header{ font-family:'Impact','Inter Tight',system-ui,sans-serif; font-weight:900; font-size:clamp(3rem,6vw,5rem); padding:1.25rem 1.5rem; color:#F9F3DE; letter-spacing:-0.03em; }
 .postcard-large__body{ padding:1.5rem; min-height:200px; color:#F9F3DE; }
+
+/* Projects heading */
+.projects-heading {
+  font-family:'Impact','Inter Tight',system-ui,sans-serif;
+  font-weight:900;
+  font-size:clamp(3rem,8vw,6rem);
+  color:#E91B00;
+  text-transform:uppercase;
+  letter-spacing:-0.03em;
+  margin:3rem 0 2rem 2vw;
+  text-align:left;
+  width:100%;
+}
 .postcard-large:first-of-type{ background-image:url('images/amongus.png'); background-size:cover; background-position:center; background-repeat:no-repeat; position:relative; }
 .postcard-large:first-of-type::before,
 .postcard-large:nth-of-type(2)::before,
