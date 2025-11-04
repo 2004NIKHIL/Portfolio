@@ -54,6 +54,25 @@ html, body {
 .highlight-dev:hover .dev-gif{ transform:translateX(-50%) scale(1); opacity:1; }
 .highlight-dev .dev-gif img{ width:100%; height:100%; object-fit:cover; display:block; }
 
+/* Secret GIF in Mission Control: hide by default, show on hover of the surrounding .underline */
+.secret-gif{
+  display:inline-block;
+  width:0; /* collapsed by default */
+  height:0;
+  overflow:hidden;
+  vertical-align:middle;
+  margin-left:0;
+  opacity:0;
+  transition:width .28s ease, height .28s ease, margin-left .2s ease, opacity .24s ease;
+}
+.underline:hover .secret-gif,
+.underline:focus .secret-gif{
+  width:48px; /* adjust as needed */
+  height:48px;
+  margin-left:.5rem;
+  opacity:1;
+}
+
 /* PROJECTS (left-aligned white lines + postcards) */
 .page-2{ min-height:100vh; background:#000; display:flex; align-items:center; justify-content:center; padding:2rem; }
 .page-2-content{ width:100%; display:flex; align-items:center; justify-content:flex-start; flex-direction:column; gap:2rem; }
@@ -88,15 +107,7 @@ html, body {
 .postcard-large.zoom-out{ transform:rotate(-2.5deg) scale(.85); opacity:.4; }
 .postcard-large:nth-child(even).zoom-out{ transform:rotate(2deg) scale(.85); }
 
-/* PARALLAX */
-.parallax-section{ position:sticky; top:0; height:100vh; background:#000 url('images/airplane-bg.avif') center/cover no-repeat; overflow:hidden; display:flex; align-items:center; justify-content:center; isolation:isolate; }
-.parallax-section::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.4); z-index:1; }
-.plx-wrap{ position:relative; width:100%; height:100%; transition:transform 1s cubic-bezier(.76,0,.24,1), opacity .6s ease; transform-origin:center; z-index:2; }
-.plx-layer{ position:absolute; inset:0; will-change:transform; pointer-events:none; }
-.plx-back,.plx-mid,.plx-front{ opacity:.2; }
-.parallax-heading{ position:absolute; inset:auto auto 8vh 2vw; font-family:'Impact','Inter Tight',system-ui,sans-serif; font-weight:900; font-size:clamp(2.5rem,8vw,6rem); letter-spacing:-0.03em; color:#F9F3DE; text-transform:uppercase; z-index:10; transition:opacity .5s ease; }
-.plx-wrap.zoom-dive .parallax-heading{ opacity:0; }
-
+/* Parallax section removed - styles cleaned up */
 /* MISSION CONTROL + SWIPE MACHINE */
 .mission-control-page{ position:relative; min-height:100vh; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:8rem 2rem 4rem; color:#F9F3DE; z-index:1; overflow:hidden; }
 .mission-control-page .sky-stars{ position:absolute; inset:0; z-index:0; pointer-events:none; }
@@ -178,3 +189,11 @@ html, body {
 
 /* Add smooth scrolling to the entire page */
 html { scroll-behavior: smooth; }
+
+/* Ensure anchor targets (like #projects) land the section heading below the fixed hero/nav
+   so the "Projects" heading appears clearly when clicking the nav link. */
+:root{ --hero-offset: 88px; }
+#projects .projects-heading,
+.projects-heading {
+  scroll-margin-top: calc(var(--hero-offset) + 12px);
+}

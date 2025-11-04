@@ -56,9 +56,15 @@
     const css = `
       .mission-control-page.reveal h2,
       .mission-control-page.reveal p { opacity: 1 !important; transform: none !important; }
-      /* Minimal Socials layout to ensure it's visible */
+      /* Minimal Socials layout: keep locked state hidden until unlock */
       #socialsPage {
-        min-height: 100vh; background:#000; color:#F9F3DE;
+        /* default locked appearance: collapsed and inert */
+        min-height: 0; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
+        background:#000; color:#F9F3DE; display:block; padding:0 2rem; transition:opacity .36s ease, max-height .36s ease, padding .28s ease;
+      }
+      /* unlocked -> fully visible and interactive */
+      #socialsPage.unlocked {
+        min-height: 100vh; max-height: 200vh; overflow: visible; opacity: 1; pointer-events: auto;
         display:flex; align-items:center; justify-content:center; padding:4rem 2rem;
       }
       #socialsPage .wrap { max-width: 900px; width:100%; text-align:center; }
