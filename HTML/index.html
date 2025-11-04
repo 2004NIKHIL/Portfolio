@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Portfolio</title>
+	<link rel="stylesheet" href="../assets/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+	<style>
+	  /* Banner: subtle glass look */
+	  .guard-banner{
+	    position:fixed; left:0; right:0; bottom:0; z-index:10000;
+	    transform: translateY(110%);
+	    transition: transform .42s cubic-bezier(.22,1,.36,1);
+	    padding:.9rem 1.25rem;
+	    background: linear-gradient(180deg, rgba(10,10,10,0.78), rgba(10,10,10,0.58));
+	    border-top:1px solid rgba(255,255,255,0.12);
+	    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+	  }
+	  .guard-banner.show{ transform: translateY(0); }
+	  .guard-banner .btn{
+	    background:#E91B00; color:#F9F3DE; border:2px solid rgba(249,243,222,0.35);
+	    padding:.55rem .95rem; border-radius:.6rem; font-family:'Apercu Mono','Courier New',monospace; font-weight:800;
+	    box-shadow:0 6px 18px rgba(233,27,0,0.35), inset 0 0 0 9999px rgba(0,0,0,0.08);
+	    cursor:pointer;
+	  }
+	  /* Add gap between postcards */
+	  .page-2-content{ gap: 8rem !important; }
+	  /* Socials heading: match portfolio style */
+	  .socials-page h2{
+	    font-family:'Impact','Inter Tight',system-ui,sans-serif;
+	    font-weight:900; font-size:clamp(3rem,10vw,8rem);
+	    color:#E91B00; text-transform:uppercase; letter-spacing:-0.03em;
+	    margin-bottom:1.5rem;
+	  }
+	  /* Photo container: left side of card, tight crop */
+	  .swipe-card-element .photo{
+	    width:90px; height:100%; flex-shrink:0; /* fixed narrow width */
+	    overflow:hidden; border-radius:15px 0 0 15px; /* match card left corners */
+	  }
+	  .swipe-card-element .photo img{
+	    width:100%; height:100%; object-fit:cover; object-position:40% 25%; /* face-centered crop */
+	  }
+	</style>
+</head>
+<body>
+	<section class="hero">
+		<div class="hero-content">
+			<h1 class="hero-title">
+				<span class="title-large">
+					<span class="letter-rest">CRE</span>
+					<span class="letter-zoom">
+						<span class="letter-a">A</span>
+						<span class="letter-a-caption">
+						  <span class="cap-word">निखिल</span><span class="cap-word">कुमार</span>
+						</span>
+					</span>
+					<span class="letter-rest">TIVE</span>
+				</span>
+			</h1>
+		</div>
+		<nav class="hero-nav">
+			<a href="#about">About</a>
+			<a href="#projects">Projects</a>
+			<a href="#skills">Skills</a>
+			<a href="#mission-control">Contact</a>
+		</nav>
+	</section>
+
+	<!-- About Me Page -->
+	<section id="about" class="page-about" role="region" aria-label="About Me">
+		<div class="page-about-content">
+			<!-- About Me heading in red -->
+			<h2 class="about-heading">About Me</h2>
+
+			<!-- About Me content -->
+			<div class="about-content">
+			  I'm a <span class="highlight-dev">software developer
+				<span class="dev-gif">
+				  <img src="../assets/images/coding-dev.gif" alt="Coding GIF">
+				</span>
+			  </span> passionate about blending creativity with logic — from crafting smooth UIs using React and JavaScript, to solving problems in C++, DSA, and SQL, and exploring the world of <span class="highlight-dev">AI with Python
+				<span class="dev-gif">
+				  <img src="../assets/images/ai-python.jpg" alt="AI Python">
+				</span>
+			  </span>.
+			  <br><br>
+			  I love experimenting, learning, and sometimes arguing with my own code <span class="highlight-dev">until it listens
+				<span class="dev-gif">
+				  <img src="../assets/images/debugging.gif" alt="Debugging GIF">
+				</span>
+			  </span>.
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Page -->
+	<section id="projects" class="page-2" role="region" aria-label="Projects">
+		<div class="page-2-content">
+			<h2 class="artboard-heading artboard-heading-rtl">
+				<span class="line">CRAF<span class="kern-t">T</span>.</span>
+				<span class="line">CODE.</span>
+				<span class="line">CREATE.</span>
+			</h2>
+
+			<!-- Projects heading in red -->
+			<h3 class="projects-heading">Projects</h3>
+
+			<!-- Project 1 -->
+			<div class="postcard-large" role="region" aria-label="Project 1">
+			  <header class="postcard-large__header">Project 1</header>
+			  <div class="postcard-large__body"> <!-- content --> </div>
+			</div>
+
+			<!-- Project 2 -->
+			<div class="postcard-large" role="region" aria-label="Project 2">
+			  <header class="postcard-large__header">Project 2</header>
+			  <div class="postcard-large__body"> <!-- content --> </div>
+			</div>
+
+			<!-- Project 3 -->
+			<div class="postcard-large" role="region" aria-label="Project 3">
+			  <header class="postcard-large__header">Project 3</header>
+			  <div class="postcard-large__body"> <!-- content --> </div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Parallax Window Zoom Dive (Airplane) -->
+	<section id="parallax" class="parallax-section" role="region" aria-label="Parallax">
+	  <div class="plx-wrap">
+	    <div class="plx-layer plx-back" data-speed="0.15"></div>
+	    <div class="plx-layer plx-mid" data-speed="0.30"></div>
+	    <div class="plx-layer plx-img" data-speed="0.20"></div>
+	    <div class="plx-layer plx-front" data-speed="0.40"></div>
+	    <h2 class="parallax-heading">Keep Building.</h2>
+	  </div>
+	</section>
+
+	<div class="scroll-trigger"></div>
+
+	<!-- Mission Control Center page -->
+	<section id="mission-control" class="mission-control-page" role="region" aria-label="Mission Control">
+	  <div class="sky-stars">
+	    <div class="star"></div>
+	    <div class="star"></div>
+	    <div class="star"></div>
+	    <div class="star"></div>
+	    <div class="star"></div>
+	  </div>
+	  <h2>Mission Control Center</h2>
+	  <p>You've reached the secret room<br><span class="underline">Shhh<span class="secret-gif"><img src="../assets/images/secret.gif" alt="Secret" loading="lazy"></span></span>… Don't tell the impostors.</p>
+	  
+	  <div class="card-swipe-wrapper">
+	    <div class="card-reader" data-status="">
+	      <div class="top">
+	        <div class="screen">
+	          <div class="card-message"></div>
+	        </div>
+	        <div class="lights">
+	          <div class="card-light red"></div>
+	          <div class="card-light green"></div>
+	        </div>
+	      </div>
+	      <div class="bottom"></div>
+	    </div>
+	    
+	    <div class="swipe-card-element" id="swipeCard">
+	      <div class="photo">
+					<img
+					  src="../assets/images/WhatsApp%20Image%202025-11-04%20at%2012.06.52%20copy.jpeg"
+					  alt="ID Photo"
+					/>
+	      </div>
+	      <!-- added card info: visible next to photo while preserving swipe -->
+	      <div class="card-info" aria-hidden="true">
+	        <div class="card-name">Bug Whisperer</div>
+	        <div class="card-role">Syntax Ninja</div>
+	      </div>
+	    </div>
+	    
+	    <div class="wallet">
+	      <div class="wallet-clasp"></div>
+	    </div>
+	  </div>
+	  
+	  <audio id="ambienceAudio" loop>
+	    <source src="../assets/audio/ambience.mp3" type="audio/mpeg">
+	  </audio>
+	  <audio id="denyAudio">
+	    <source src="../assets/audio/deny.mp3" type="audio/mpeg">
+	  </audio>
+	  <audio id="acceptAudio">
+	    <source src="../assets/audio/accept.mp3" type="audio/mpeg">
+	  </audio>
+	</section>
+
+	<!-- ADD: Socials page (shown after card acceptance) -->
+	<section id="socialsPage" class="socials-page locked" role="region" aria-label="Social Links">
+	  <div class="wrap">
+	    <h2>Welcome Aboard</h2>
+	    <p style="font-family:'Apercu Mono','Courier New',monospace;opacity:.85;margin-bottom:1.25rem;font-size:1.1rem;">
+	      You're cleared to proceed. Connect with me here.
+	    </p>
+	    <div class="links">
+	      <a class="link" href="https://github.com/2004NIKHIL" target="_blank" rel="noopener noreferrer">GitHub</a>
+	      <a class="link" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+	      <a class="link" href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+	      <a class="link" href="mailto:your.email@example.com">Email</a>
+	    </div>
+	  </div>
+	</section>
+
+	<!-- Play this audio when socials page is unlocked -->
+	<audio id="socialsUnlockAudio">
+	  <source src="../assets/audio/unlock.mp3" type="audio/mpeg">
+	</audio>
+
+	<!-- Banner: fixed at bottom, appears when trying to go past Mission Control -->
+	<div id="guardBanner" class="guard-banner" role="region" aria-live="polite">
+	  <div class="inner">
+	    <span id="guardBannerMsg">Access blocked — swipe your card at Mission Control to continue.</span>
+	    <button id="guardBackBtn" class="btn" type="button">Take me to the swipe</button>
+	  </div>
+	</div>
+
+	<div class="custom-cursor" aria-hidden="true">
+	    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+	        <line x1="10" y1="0.6875" x2="10" y2="19.6875" stroke="#E91B00"></line>
+	        <line y1="9.6875" x2="19" y2="9.6875" stroke="#E91B00"></line>
+	    </svg>
+	</div>
+	<!-- Minimal fallback to guarantee unlock + scroll to Socials after valid swipe AND enable drag if engine misses -->
+	<script>
+	(function(){
+	  const reader = document.querySelector('.card-reader');
+	  const card = document.querySelector('.swipe-card-element');
+	  const socials = document.getElementById('socialsPage');
+	  const banner = document.getElementById('guardBanner');
+	  const acceptAudio = document.getElementById('acceptAudio');
+	  const unlockAudio = document.getElementById('socialsUnlockAudio');
+	  if (!reader || !card || !socials) return;
+
+	  // Prepare card (vars + disable native drag)
+	  card.setAttribute('draggable','false');
+	  if (!card.style.getPropertyValue('--dx')) card.style.setProperty('--dx','0px');
+	  if (!card.style.getPropertyValue('--rot')) card.style.setProperty('--rot','0deg');
+
+	  function threshold(){
+	    try{ return typeof window.__computeAcceptThreshold==='function' ? window.__computeAcceptThreshold() : 40; }catch(e){ return 40; }
+	  }
+	  function play(el){ try{ if(el){ el.currentTime=0; el.play().catch(()=>{}); } }catch(_){} }
+	  function tryPlayUnlock(){ play(unlockAudio); }
+
+	  function openSocials(){
+	    socials.classList.remove('locked');
+	    socials.classList.add('unlocked');
+	    banner && banner.classList.remove('show');
+	    try { socials.scrollIntoView({ behavior:'smooth', block:'start' }); } catch {}
+	    try { if (location.hash !== '#socialsPage') location.hash = 'socialsPage'; } catch {}
+	    tryPlayUnlock();
+	  }
+	  function grantAccess(){
+	    if (window.__accessGranted) return;
+	    window.__accessGranted = true;
+	    sessionStorage.setItem('accessGranted','true');
+	    document.dispatchEvent(new CustomEvent('access:granted'));
+	    openSocials();
+	  }
+
+	  // Open if engine dispatches
+	  document.addEventListener('access:granted', openSocials);
+
+	  // Observe reader status from swipe.js
+	  new MutationObserver(() => {
+	    if ((reader.getAttribute('data-status')||'') === 'valid') grantAccess();
+	  }).observe(reader, { attributes:true });
+
+	  // Simple pointer-based swipe if engine didn't bind
+	  let dragging=false, pid=null, sx=0, cx=0;
+	  const setDX = v => card.style.setProperty('--dx', v+'px');
+	  const setROT= d => card.style.setProperty('--rot', d+'deg');
+
+	  function onDown(e){
+	    if (e.pointerType==='mouse' && e.button!==0) return;
+	    try{ card.setPointerCapture(e.pointerId); pid=e.pointerId; }catch(_){}
+	    dragging=true; sx=e.clientX; cx=sx;
+	    card.classList.add('pulled','swiping');
+	    reader.dataset.status='ready';
+	    e.preventDefault();
+	  }
+	  function onMove(e){
+	    if(!dragging) return;
+	    cx=e.clientX;
+	    const dx=cx-sx;
+	    setDX(dx); setROT(dx/15);
+	    e.preventDefault();
+	  }
+	  function onUp(e){
+	    if(!dragging) return;
+	    dragging=false;
+	    try{ if(pid!=null) card.releasePointerCapture(pid); }catch(_){}
+	    card.classList.remove('swiping');
+	    const dx=cx-sx;
+	    const th=threshold();
+	    if (dx>th){
+	      reader.dataset.status='valid';
+	      // Play accept audio immediately on valid swipe
+	      if (acceptAudio) {
+	        acceptAudio.pause();
+	        acceptAudio.currentTime = 0;
+	        acceptAudio.volume = 0.7;
+	        acceptAudio.play().catch(()=>{});
+	      }
+	      grantAccess();
+	      // settle pose
+	      setDX(th+30); setROT(10);
+	      setTimeout(()=>{ card.classList.remove('pulled'); setDX(0); setROT(0); }, 500);
+	    } else if (dx<-th){
+	      reader.dataset.status='invalid';
+	      setDX(-th-30); setROT(-10);
+	      setTimeout(()=>{ reader.dataset.status=''; card.classList.remove('pulled'); setDX(0); setROT(0); }, 500);
+	    } else {
+	      setDX(0); setROT(0);
+	      setTimeout(()=>{ reader.dataset.status=''; card.classList.remove('pulled'); }, 350);
+	    }
+	    e.preventDefault();
+	  }
+	  // Bind pointer fallback (idempotent)
+	  if (!card.dataset.fallbackBound){
+	    card.dataset.fallbackBound='1';
+	    card.addEventListener('pointerdown', onDown, { passive:false });
+	    card.addEventListener('pointermove', onMove, { passive:false });
+	    card.addEventListener('pointerup', onUp, { passive:false });
+	    card.addEventListener('pointercancel', onUp, { passive:false });
+	    card.addEventListener('pointerleave', onUp, { passive:false });
+	  }
+
+	  // Support reload/hash direct
+	  if (sessionStorage.getItem('accessGranted')==='true' || location.hash==='#socialsPage'){ grantAccess(); }
+	  window.addEventListener('hashchange', ()=>{ if (location.hash==='#socialsPage') grantAccess(); });
+	})();
+	</script>
+
+	<!-- External scripts only (config, app logic, swipe engine) -->
+	<script src="../js/swipe-config.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../swipe.js"></script>
+</body>
+</html>
