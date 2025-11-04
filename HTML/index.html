@@ -26,7 +26,32 @@
 	  }
 	  /* Add gap between postcards */
 	  .page-2-content{ gap: 8rem !important; }
-	  /* Socials styles now handled by swipe-config.js injected CSS */
+	  
+	  /* Socials page: critical hiding styles (must load before JS) */
+	  #socialsPage {
+	    min-height: 0 !important;
+	    max-height: 0 !important;
+	    overflow: hidden !important;
+	    opacity: 0 !important;
+	    pointer-events: none !important;
+	    background: #000;
+	    color: #F9F3DE;
+	    display: block !important;
+	    padding: 0 2rem !important;
+	    transition: opacity .36s ease, max-height .36s ease, padding .28s ease, min-height .36s ease;
+	  }
+	  /* Unlocked state - styled by JS injection */
+	  #socialsPage.unlocked {
+	    min-height: 100vh !important;
+	    max-height: none !important;
+	    overflow: visible !important;
+	    opacity: 1 !important;
+	    pointer-events: auto !important;
+	    display: flex !important;
+	    align-items: center !important;
+	    justify-content: center !important;
+	    padding: 4rem 2rem !important;
+	  }
 	  /* Photo container: left side of card, tight crop */
 	  .swipe-card-element .photo{
 	    width:90px; height:100%; flex-shrink:0; /* fixed narrow width */
